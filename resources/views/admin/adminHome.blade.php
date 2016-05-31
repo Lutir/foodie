@@ -14,7 +14,7 @@
         <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/style.css')}}">
         <script type="text/javascript" src="{{URL::asset('assets/js/jquery.js')}}"></script>
         <script type="text/javascript" src="{{URL::asset('assets/js/script.js')}}"></script>
-        <script type="text/javascript" src="{{URL::asset('assets/js/admin.js')}}"></script>
+        <script type="text/javascript" src="{{URL::asset('assets/js/hostel.js')}}"></script>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -185,7 +185,7 @@
                 </section>                
               </div>  
 
-<div class="content-wrapper " id="addItem">               
+<div class="content-wrapper no-view" id="addItem">               
                 <section class="content-header " >
                   <h1>
                     View Menu
@@ -197,7 +197,7 @@
                 <div class="container center">
                   <div class="row">                  
                     <div class="col-md-8 col-md-offset-1 ">
-                      <select name="vendorName" id="vendorName" class="form-control" required="required">
+                      <select name="menuName" id="menuName" class="form-control" required="required">
                         <option value="ccd">Cafe Coffee Day</option>
                         <option value="d1">Dhaba 1</option>
                         <option value="d2">Dhaba 2</option>
@@ -212,7 +212,7 @@
                 </section>                
               </div>      
 
-<div class="content-wrapper no-view" id="addVendor">               
+          <div class="content-wrapper " id="addVendor">               
                 <section class="content-header " >
                   <h1>
                     Add Vendor
@@ -220,10 +220,29 @@
                   </h1>                                  
                 </section>                
                 <section class="content">
-                    <p>This will be add vendor</p>
+                    <section class="content">
+                <div class="space-large"></div>
+                <div class="container center">
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-1">
+                      <input type="text" name="VendorName" id="vendorName" class="form-control" value="" required="required" placeholder="Enter Vendor Name" required="true" />
+                    </div>                                        
+                  </div>
+                  <div class="space-small"></div>
+                  <div class="col md-7 col-md-offset-3 hidden-xs">
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="addName('vendor')">Add Vendor</button>                                
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="removeName('vendor')">Remove Vendor</button>                             
+                  <button type="button" class=" btn btn-primary  btn-flat margin" onclick="viewAll('vendor')">View all Vendors</button>                                
+                </div>
+                <div class="visible-xs">
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="addName('vendor')">Add Vendor</button>                                
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="removeName('vendor')">Remove Vendor</button>                             
+                  <button type="button" class=" btn btn-primary  btn-flat margin" onclick="viewAll('vendor')">View all Vendors</button>                                
+                </div>                
                 </section>                
               </div>   
                                           
+
 
   <div class="content-wrapper no-view" id="addHostel">               
                 <section class="content-header " >
@@ -237,31 +256,41 @@
                 <div class="container center">
                   <div class="row">
                     <div class="col-md-8 col-md-offset-1">
-                      <input type="text" name="hostelName" id="hostelName" class="form-control" value="" required="required" placeholder="Enter Hostel Name" />
+                      <input type="text" name="hostelName" id="hostelName" class="form-control" value="" required="required" placeholder="Enter Hostel Name" required="true" />
                     </div>                                        
                   </div>
                   <div class="space-small"></div>
-                  <button type="button" class="center-1 btn btn-primary  btn-flat margin" onclick="addHostelName()">Submit</button>                                
+                  <div class="col md-7 col-md-offset-3 hidden-xs">
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="addName('hostel')">Add hostel</button>                                
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="removeName('hostel')">Remove hostel</button>                             
+                  <button type="button" class=" btn btn-primary  btn-flat margin" onclick="viewAll('hostel')">View all hostels</button>                                
                 </div>
+                <div class="visible-xs">
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="addName('hostel')">Add hostel</button>                                
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="removeName('hostel')">Remove hostel</button>                             
+                  <button type="button" class=" btn btn-primary  btn-flat margin" onclick="viewAll('hostel')">View all hostels</button>                                
+                </div>                
+                
 
-                <div class="modal fade" id="success">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      
-                      <div class="modal-body">
-                        <h4>Hostel Name successfully added!</h4>                        
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>             
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                
                 </section>                       
               </div>   
   
 
-  
+  <div class="modal fade" id="success">
+    <div class="modal-dialog">
+      <div class="modal-content status">
+        
+        <div class="modal-body">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>             
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="main-footer">
     
     <div class="pull-right hidden-xs">

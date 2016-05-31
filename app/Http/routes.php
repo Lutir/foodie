@@ -15,9 +15,9 @@ Route::get('/admin', function () {
     return view('admin.adminHome');
 });
 
-Route::post('addHostel','AdminController@addHostel');
-Route::post('addItem','AdminController@addItem');
-Route::post('viewMenu','AdminController@addItem');
+Route::post('addName','AdminController@addName');
+Route::post('viewAll','AdminController@viewAll');
+Route::post('removeName','AdminController@removeName');
 
 
 
