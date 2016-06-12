@@ -15,7 +15,15 @@ Route::get('/admin', function () {
     return view('admin.adminHome');
 });
 
+Route::get('/home', function () {
+    return view('site.index');
+});
+
+
+Route::get('/home/menuSelect', 'MainController@viewMenu');
+Route::get('/home/order/{name}', 'MainController@viewPlace');
 Route::post('addName','AdminController@addName');
+Route::post('addMenuItem','AdminController@addMenuItem');
 Route::post('viewAll','AdminController@viewAll');
 Route::post('removeName','AdminController@removeName');
 

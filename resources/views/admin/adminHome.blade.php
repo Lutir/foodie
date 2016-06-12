@@ -185,34 +185,65 @@
                 </section>                
               </div>  
 
-<div class="content-wrapper no-view" id="addItem">               
+<div class="content-wrapper" id="addItem">               
                 <section class="content-header " >
                   <h1>
-                    View Menu
+                    Add Items
                     <small>Edit items in menu here.</small>
                   </h1>                                 
                 </section>                
                 <section class="content">
                 <div class="space-large"></div>
                 <div class="container center">
-                  <div class="row">                  
-                    <div class="col-md-8 col-md-offset-1 ">
-                      <select name="menuName" id="menuName" class="form-control" required="required">
-                        <option value="ccd">Cafe Coffee Day</option>
-                        <option value="d1">Dhaba 1</option>
-                        <option value="d2">Dhaba 2</option>
-                        <option value="d3">Dhaba 3</option>
-                        <option value="neelkesh">Neelkesh</option>
-                      </select>
+                  <div class="row">
+                    <div class="col-md-9 col-md-offset-1">
+                      <input type="text" name="dish" id="dish" class="form-control" value="" required="required" placeholder="Enter Dish name">
                     </div>                    
                   </div>
                   <div class="space-small"></div>
-                  <button type="button" class="viewMenu center-1 btn btn-primary  btn-flat margin">View Menu</button>                                
+                  <div class="row">                  
+                    <div class="col-md-3 col-md-offset-1 ">
+                      <select name="menuVenue" id="menuVenue" class="form-control" required="required">
+                        <option value="">Select Vendor</option>
+                        <option value="ccd">Cafe Coffee Day</option>
+                        <option value="dhaba1">Dhaba 1</option>
+                        <option value="dhaba2">Dhaba 2</option>
+                        <option value="dhaba3">Dhaba 3</option>
+                        <option value="neelkesh">Neelkesh</option>
+                      </select>
+                    </div>   
+                    <div class="col-md-1">
+                      <select name="menuType" id="menuType" class="form-control" required="required">
+                        <option value="">Type</option>
+                        <option value="veg">Veg</option>
+                        <option value="nveg">Non-Veg</option>                        
+                      </select>
+                    </div>   
+                    <div class="col-md-3">
+                      <select name="menuCateg" id="menuCateg" class="form-control" required="required">
+                        <option value="">Select Category</option>
+                        <option value="drink">Drinks</option>
+                        <option value="specials">Specials</option>                        
+                        <option value="main">Main-Course</option>
+                        <option value="snacks">Snacks</option>
+                      </select>
+                    </div> 
+                    <div class="col-md-2">
+                      <input type="number" name="cost" id="cost" class="form-control" value="" required="required" placeholder="Enter Cost" min="5" max="1000">
+                    </div>                    
+                  </div>
+                  <div class="space-small"></div>
+                  <div class="row">
+                    <div class="col-md-6 col-md-offset-4">
+                  <button type="button" class="center btn btn-primary  btn-flat margin" onclick="addItem('add')">Add Item</button>                                
+                  <button type="button" class="center btn btn-primary  btn-flat margin" onclick="addItem('remove')">Remove Item</button>    
+                  </div>                            
+                  </div>
                 </div>
                 </section>                
               </div>      
 
-          <div class="content-wrapper " id="addVendor">               
+          <div class="content-wrapper no-view" id="addVendor">               
                 <section class="content-header " >
                   <h1>
                     Add Vendor

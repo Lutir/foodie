@@ -23,3 +23,40 @@
 .no-view{
 	display: none;
 }
+.styled-select{
+	overflow: hidden;
+
+}
+.styled-select ul{
+	background: transparent;
+	border:1px solid #fff;
+	   font-size: 20px;	   
+	   padding: auto;
+	   font-weight: 800px;	
+	   width: 350px;
+	   margin: 0 auto;
+	   padding: 5px 0 1px 0;
+}
+.styled-select ul li{
+	background: transparent;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	   font-size: 18px;
+	   padding: 5px 5px 0px 5px; 
+	   width: 348px;
+	   margin: 0 auto;
+	   text-align: center;
+}
+.styled-select ul li:hover{
+	background: #fff;
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+	   font-size: 18px;
+	   color: black;
+	   font-weight: 500;	   	   
+	   padding: 5px 5px 0px 5px; 
+	   width: 348px;
+	   margin: 0 auto;
+	   text-align: center;
+	   cursor: pointer;
+}

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Vendor;
 use App\Hostel;
+use App\MenuDhaba;
 use Log;
 
 
@@ -77,6 +78,34 @@ class AdminController extends Controller
    			$data = Vendor::all();
    			return json_encode($data);
    		}
+   }
+
+   public function addMenuItem(Request $request)
+   {
+      $bool = MenuDhaba::where('name',$request->input('name'))
+                        ->first();
+      if($request->input('addorremove')=='add'){
+      if(!$bool){
+         $item = new MenuDhaba();
+         $item->name = $request->input('name');
+         $item->type = $request->input('type');
+         $item->categ = $request->input('categ');
+         $item->cost = $request->input('cost');
+         $item->place = $request->input('venue');
+         $item->save();
+         return json_encode('add1');
+         }
+      return json_encode('add0');
+      }
+      else if($request->input('addorremove')=='remove'){
+         if($bool){
+            MenuDhaba::where('name',$request->input('name'))
+                           ->where('place',$request->input('venue'))
+                           ->delete();
+            return json_encode('remove1');
+         }
+         json_encode('remove0');
+      }
    }
 
 }
