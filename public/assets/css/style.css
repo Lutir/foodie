@@ -60,3 +60,24 @@
 	   text-align: center;
 	   cursor: pointer;
 }
+.menu{
+	padding: 5px;
+}
+.menu:hover{
+	background-color: rgba(200,200,240,0.15);
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease-in-out 0s;
+	-moz-transition: all 0.3s ease-in-out 0s;
+	-ms-transition: all 0.3s ease-in-out 0s;
+	-o-transition: all 0.3s ease-in-out 0s;
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.menu-price-detail button{
+	display: inline;
+}
+.small{
+	padding: 0px;
+	width: 60px;
+	font-size: 12px;
+}

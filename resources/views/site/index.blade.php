@@ -38,7 +38,7 @@
 				<div class="main-slider">
 					<div class="slider-content text-center">						
 						<h1><span class="pacifico">Welcome To</span> FOOD<span class="bold">2</span>U</h1>
-						<h2>Food delivary at yoyr footsteps :)</h2>
+						<h2>Food delivary at your footsteps :)</h2>
 						<a href="#" class="btn btn-primary">Order Now</a>
 					</div>
 				</div>

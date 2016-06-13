@@ -8,12 +8,20 @@ use App\Http\Requests;
 use App\Vendor;
 use App\Hostel;
 use App\MenuDhaba;
+use App\FoodCateg;
+use View;
 use Log;
 
 
 class AdminController extends Controller
 {
    
+   public function makeAdmin(){
+      $data['vendors'] = Vendor::all();      
+      $data['categ'] = FoodCateg::all();
+      return View::make('admin.adminHome')->with('data',$data);
+   }
+
    public function addName(Request $request)
    {
    		if($request->input('type')=='hostel'){
@@ -42,6 +50,19 @@ class AdminController extends Controller
    				return json_encode(0);
    			}
    		}
+         else if($request->input('type')=='categ'){
+            $bool = FoodCateg::where('name',$request->input('name'))
+                  ->first();
+            if(!$bool){
+               $name = new FoodCateg();
+               $name->name = $request->input('name');
+            $name->save();
+            return json_encode(1);
+            }
+            else{
+               return json_encode(0);
+            }
+         }
    }
 
    public function removeName(Request $request)
@@ -66,6 +87,16 @@ class AdminController extends Controller
    			}
    			return json_encode(0);
    		}
+         else if($request->input('type')=='categ'){
+            $bool = FoodCateg::where('name',$request->input('name'))
+                  ->first();
+            if($bool){
+               FoodCateg::where('name',$request->input('name'))
+                  ->delete();
+               return json_encode(1);
+            }
+            return json_encode(0);
+         }
    }
 
    public function viewAll(Request $request)
@@ -78,6 +109,10 @@ class AdminController extends Controller
    			$data = Vendor::all();
    			return json_encode($data);
    		}
+         else if($request->input('type')=='categ'){
+            $data = FoodCateg::all();
+            return json_encode($data);
+         }
    }
 
    public function addMenuItem(Request $request)

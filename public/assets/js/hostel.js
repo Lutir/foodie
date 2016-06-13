@@ -75,6 +75,7 @@ function removeName(type){
 		var x = $('#vendorName').val();
 		console.log(x);
 	}
+	else if(type=='categ')
 	if(x==''){
 		var div = '<h4>Fill all the details!</h4>';
 		$('.status .modal-body').html('');
@@ -129,6 +130,11 @@ function addName(type){
 		var x = $('#vendorName').val();
 		console.log('bendor name is '+x);
 	}
+	else if(type=='categ'){
+		var x = $('#categName').val();
+		x = x.toLowerCase();
+		console.log('categ name is '+x);	
+	}
 	if(x==''){
 		var div = '<h4>Fill all the details!</h4>';
 		$('.status .modal-body').html('');
@@ -173,6 +179,11 @@ function viewAll(type){
 			        	for(var i=0;i<data.length;i++){
 			        		content[i] = data[i].vendorName;
 			        	}	
+		        	}
+		        	else if(type=='categ'){
+		        		for(var i=0;i<data.length;i++){
+			        		content[i] = data[i].name;
+			        	}		
 		        	}
 		        	var div = '<h3><b>Lists of'+ type + 's </b></h3>';
 		        	for(var i=1;i<=content.length;i++){

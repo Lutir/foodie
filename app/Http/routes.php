@@ -11,15 +11,11 @@
 |
 */
 
-Route::get('/admin', function () {
-    return view('admin.adminHome');
-});
-
 Route::get('/home', function () {
     return view('site.index');
 });
 
-
+Route::get('/admin', 'AdminController@makeAdmin');
 Route::get('/home/menuSelect', 'MainController@viewMenu');
 Route::get('/home/order/{name}', 'MainController@viewPlace');
 Route::post('addName','AdminController@addName');

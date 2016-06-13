@@ -16,7 +16,7 @@ $(document).ready(function(){
 		window.location = 'http://localhost:8000/home/order/'+ name;
 	});
 });
-var menuItems = ['dashboard','addItem','addVendor','addHostel'];
+var menuItems = ['dashboard','addItem','addVendor','addHostel','addCateg'];
 var hostelNames = ['diamond','opal','jade','coral','amber'];
 
 

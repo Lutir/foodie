@@ -128,26 +128,6 @@ h1, h2, h3, h4, h5, h6 {
 	content:"\f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005  \f005";
 }
 
-.btn-primary {	
-	border:1px solid #fff;
-	color:#fff;
-	background-color:transparent;
-	text-transform: capitalize;
-	font-size: 16px;
-	font-weight: 700;
-	padding: 13px 20px;
-	position: relative;
-	-webkit-transition: all 0.3s ease-in-out;
-	-moz-transition: all 0.3s ease-in-out;
-	-ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;	
-	letter-spacing:0;
-	position:relative;
-	box-shadow:none;
-	z-index:1;
-}
-
 .large{
 	font-size:30px;
 	font-weight: 500;
@@ -162,6 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 	width:0;
 	border-radius:4px;
 	z-index:-1;
+	background-color: #d65b21 !important;
 	-webkit-transition: all 0.5s ease-in-out;
 	-moz-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
@@ -173,12 +154,14 @@ h1, h2, h3, h4, h5, h6 {
 	left:0;
 	top:0;
 	border-top:2px solid #d65b21;
+	background-color:transparent;
 }
 
 .btn-primary:after {	
 	right:0;
 	bottom:0;
 	border-bottom:2px solid #d65b21;	
+	background-color:transparent;
 }
 
 .btn-primary:hover:before {
@@ -304,7 +287,7 @@ span.bold{
 .slider-content .slider-logo {
 	display:inline-block;
 }
-
+ 
 
 /*=========special-items==========*/
 .special-item {

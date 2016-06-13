@@ -157,6 +157,7 @@
                             <li><a href="#" onclick="changeView('addItem')" ><i class="fa fa-link"></i> <span>Add Item</span></a></li>                  
                             <li><a href="#" onclick="changeView('addHostel')" ><i class="fa fa-link"></i> <span>Add Hostels</span></a></li>
                             <li><a href="#" onclick="changeView('addVendor')"><i class="fa fa-link"></i> <span>Add Place</span></a></li>
+                            <li><a href="#" onclick="changeView('addCateg')"><i class="fa fa-link"></i> <span>Add Food Category</span></a></li>
                           </ul>
                         </li>
 
@@ -185,7 +186,7 @@
                 </section>                
               </div>  
 
-<div class="content-wrapper" id="addItem">               
+<div class="content-wrapper no-view" id="addItem">               
                 <section class="content-header " >
                   <h1>
                     Add Items
@@ -205,11 +206,9 @@
                     <div class="col-md-3 col-md-offset-1 ">
                       <select name="menuVenue" id="menuVenue" class="form-control" required="required">
                         <option value="">Select Vendor</option>
-                        <option value="ccd">Cafe Coffee Day</option>
-                        <option value="dhaba1">Dhaba 1</option>
-                        <option value="dhaba2">Dhaba 2</option>
-                        <option value="dhaba3">Dhaba 3</option>
-                        <option value="neelkesh">Neelkesh</option>
+                        @for($i=0;$i< sizeof($data['vendors']);$i++)
+                          <option value="{!! $data['vendors'][$i]->vendorName !!}">{!! $data['vendors'][$i]->vendorName !!}</option>
+                        @endfor
                       </select>
                     </div>   
                     <div class="col-md-1">
@@ -222,10 +221,10 @@
                     <div class="col-md-3">
                       <select name="menuCateg" id="menuCateg" class="form-control" required="required">
                         <option value="">Select Category</option>
-                        <option value="drink">Drinks</option>
-                        <option value="specials">Specials</option>                        
-                        <option value="main">Main-Course</option>
-                        <option value="snacks">Snacks</option>
+                        @for($i=0;$i< sizeof($data['categ']);$i++)
+                          <option value="{!! $data['categ'][$i]->name !!}">
+                          {!! $data['categ'][$i]->name !!}</option>
+                        @endfor
                       </select>
                     </div> 
                     <div class="col-md-2">
@@ -269,6 +268,37 @@
                   <button type="button" class="btn btn-primary  btn-flat margin" onclick="addName('vendor')">Add Vendor</button>                                
                   <button type="button" class="btn btn-primary  btn-flat margin" onclick="removeName('vendor')">Remove Vendor</button>                             
                   <button type="button" class=" btn btn-primary  btn-flat margin" onclick="viewAll('vendor')">View all Vendors</button>                                
+                </div>                
+                </section>                
+              </div>   
+
+
+              <div class="content-wrapper" id="addCateg">               
+                <section class="content-header " >
+                  <h1>
+                    Add Category
+                    <small>Optional description</small>
+                  </h1>                                  
+                </section>                
+                <section class="content">
+                    <section class="content">
+                <div class="space-large"></div>
+                <div class="container center">
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-1">
+                      <input type="text" name="categName" id="categName" class="form-control" value="" required="required" placeholder="Enter food category Name" required="true" />
+                    </div>                                        
+                  </div>
+                  <div class="space-small"></div>
+                  <div class="col md-6 col-md-offset-2 hidden-xs">
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="addName('categ')">Add Food Category</button>                                
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="removeName('categ')">Remove Food Category</button>        
+                  <button type="button" class=" btn btn-primary  btn-flat margin" onclick="viewAll('categ')">View all Food Category</button>                                
+                </div>
+                <div class="visible-xs">
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="addName('categ')">Add Food Category</button>                                
+                  <button type="button" class="btn btn-primary  btn-flat margin" onclick="removeName('categ')">Remove Food Category</button>                   
+                  <button type="button" class=" btn btn-primary  btn-flat margin" onclick="viewAll('categ')">View all Food Category</button>                                
                 </div>                
                 </section>                
               </div>   
